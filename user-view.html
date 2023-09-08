@@ -1,0 +1,153 @@
+<div class="user-view-container">
+    <div class="user-view-header">
+        <div class="user-view-header__label">
+            <ng-container ng-if="userViewState === 'create'">
+                <span>Create new user</span>
+            </ng-container>
+
+            <ng-container ng-if="userViewState === 'edit'">
+                <span>{{originalUsername}}</span>
+            </ng-container>
+        </div>
+
+        <div class="user-view-header__close pointer" ng-click="closeView()">
+            <img class="fit-picture" src="/assets/close-24px%20(1).svg"/>
+        </div>
+    </div>
+
+    <form name="form.userForm" class="user-view-form">
+        <div class="user-view-form-field">
+            <span class="user-view-form-field__label">Username*:</span>
+            <input
+                    type="text"
+                    name="username"
+                    ng-model="user.username"
+                    user-form-validation="username"
+                    class="user-view-form-field__input"
+                    ng-class="{'error' : form.userForm.username.$error.userFormValidation && form.userForm.username.$touched}"
+            >
+            <span
+                    ng-show="form.userForm.username.$error.userFormValidation && form.userForm.username.$touched"
+                    class="user-view-form-field__error"
+            >
+                {{ form.userForm.username.$errorMessages.join(', ') }}
+            </span>
+        </div>
+
+        <div class="user-view-form-field">
+            <span>First Name*:</span>
+            <input
+                    type="text"
+                    name="first_name"
+                    ng-model="user.first_name"
+                    user-form-validation="first_name"
+                    class="user-view-form-field__input"
+                    ng-class="{'error' : form.userForm.first_name.$error.userFormValidation && form.userForm.first_name.$touched}"
+            >
+            <span
+                    ng-show="form.userForm.first_name.$error.userFormValidation && form.userForm.first_name.$touched"
+                    class="user-view-form-field__error"
+            >
+                {{ form.userForm.first_name.$errorMessages.join(', ') }}
+            </span>
+        </div>
+
+        <div class="user-view-form-field">
+            <span class="user-view-form-field__label">Last Name*:</span>
+            <input
+                    type="text"
+                    name="last_name"
+                    ng-model="user.last_name"
+                    user-form-validation="last_name"
+                    class="user-view-form-field__input"
+                    ng-class="{'error' : form.userForm.last_name.$error.userFormValidation && form.userForm.last_name.$touched}"
+            >
+            <span
+                    ng-show="form.userForm.last_name.$error.userFormValidation && form.userForm.last_name.$touched"
+                    class="user-view-form-field__error"
+            >
+                {{ form.userForm.last_name.$errorMessages.join(', ') }}
+            </span>
+        </div>
+
+        <div class="user-view-form-field input-with-image">
+            <span class="user-view-form-field__label">Email*:</span>
+            <input
+                    type="text"
+                    name="email"
+                    ng-model="user.email"
+                    user-form-validation="email"
+                    class="user-view-form-field__input"
+                    ng-class="{'error' : form.userForm.email.$error.userFormValidation && form.userForm.email.$touched}"
+            >
+            <span
+                    ng-show="form.userForm.email.$error.userFormValidation && form.userForm.email.$touched"
+                    class="user-view-form-field__error"
+            >
+                {{ form.userForm.email.$errorMessages.join(', ') }}
+            </span>
+        </div>
+
+        <div class="user-view-form-field">
+            <span class="user-view-form-field__label">Password*:</span>
+            <input
+                    type="password"
+                    name="password"
+                    ng-model="user.password"
+                    user-form-validation="password"
+                    class="user-view-form-field__input"
+                    ng-class="{'error' : form.userForm.password.$error.userFormValidation  && form.userForm.password.$touched}"
+            >
+            <span
+                    ng-show="form.userForm.password.$error.userFormValidation  && form.userForm.password.$touched"
+                    class="user-view-form-field__error"
+            >
+                {{ form.userForm.password.$errorMessages.join(', ') }}
+            </span>
+        </div>
+
+        <div class="user-view-form-field">
+            <span class="user-view-form-field__label">Repeat password*:</span>
+            <input
+                    type="password"
+                    name="repeatPassword"
+                    ng-model="repeatPassword"
+                    class="user-view-form-field__input"
+                    ng-class="{'error' : form.userForm.repeatPassword.$touched && repeatPassword !== user.password}"
+            >
+            <span
+                    ng-show="form.userForm.repeatPassword.$touched && repeatPassword !== user.password"
+            >
+                Passwords do not match.
+            </span>
+        </div>
+
+        <div class="user-view-form-field">
+            <span class="user-view-form-field__label">Type*:</span>
+            <select
+                    name="type"
+                    ng-model="user.type"
+                    ng-options="type for type in userTypes"
+                    user-form-validation="type"
+                    class="user-view-form-field__input"
+                    ng-class="{'error' : form.userForm.type.$error.userFormValidation && form.userForm.type.$touched}"
+            >
+            </select>
+            <span
+                    ng-show="form.userForm.type.$error.userFormValidation && form.userForm.type.$touched"
+                    class="user-view-form-field__error"
+            >
+                {{ form.userForm.type.$errorMessages.join(', ') }}
+            </span>
+        </div>
+
+        <div ng-if="userViewState === 'create'" class="user-view-create">
+            <button ng-click="createUser(user, form.userForm)" class="button button--primary pointer">Create</button>
+        </div>
+        <div ng-if="userViewState === 'edit'" class="user-view-edit">
+            <button ng-click="saveUser(user, form.userForm)" class="button button--primary pointer">Save</button>
+            <button ng-click="deleteUser(user)" class="button button--warn pointer">Delete</button>
+        </div>
+
+    </form>
+</div>

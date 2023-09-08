@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>AngularJS Application</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular-route.js"></script>
+    <script src="app.js"></script>
+    <link rel="stylesheet" href="styles.css">
+    <base href="/">
+</head>
+
+<body ng-app="myApp">
+<div class="app-container">
+    <div ng-controller="UserListController" class="user-list">
+        <div class="messages">
+            <div class="messages__error" ng-class="{ 'visible': error }">
+                <span class="messages--color">{{ errorMessage }}</span>
+             </div>
+
+             <div class="messages__success" ng-class="{ 'visible': success }">
+                 <span class="messages--color">{{ successMessage }}</span>
+             </div>
+         </div>
+
+         <div class="templates-container">
+
+            <div ng-include="'user-list.html'"></div>
+
+             <ng-container ng-controller="UserViewController" ng-show="userViewState" class="user-view" >
+                 <div ng-include="'user-view.html'"></div>
+             </ng-container>
+         </div>
+     </div>
+ </div>
+ </body>
+
+ </html>

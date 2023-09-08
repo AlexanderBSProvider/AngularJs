@@ -1,0 +1,263 @@
+body {
+    padding: 0;
+    margin: 0;
+}
+
+input:focus {
+    outline: none;
+}
+
+select:focus {
+    outline: none;
+}
+
+span {
+    font: 13px/16px Helvetica;
+    letter-spacing: 0;
+    color: #3F4254;
+}
+
+.pointer {
+    cursor: pointer;
+}
+
+input {
+    font-size: 11px!important;
+}
+
+select {
+    font-size: 11px!important;
+}
+
+.button {
+    color: #FFFFFF;
+    width: 120px;
+    height: 46px;
+    border-radius: 6px;
+    opacity: 1;
+    border: 0;
+}
+
+.button--primary {
+    background: #2E8FF0 0% 0% no-repeat padding-box;
+    box-shadow: 0px 5px 8px #2E8FF029;
+}
+
+.button--warn {
+    background: #F44682 0% 0% no-repeat padding-box;
+    box-shadow: 0px 5px 8px #F4468229;
+}
+
+/*------------------app--------------------*/
+.app-container {
+    width: 100vw;
+    height: 100vh;
+
+    background: #EEF0F8 0% 0% no-repeat padding-box;
+}
+
+.templates-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.messages {
+    display: flex;
+    justify-content: space-between;
+
+    padding: 56px 46px 11px 46px;
+}
+
+
+.messages__error {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-width: 281px;
+    min-height: 56px;
+
+    color: #FFFFFF;
+    background: #EF7DA0 0% 0% no-repeat padding-box;
+    box-shadow: 0px 10px 15px #EF7DA05C;
+    border-radius: 6px;
+    opacity: 0;
+}
+.messages__success {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-width: 281px;
+    min-height: 56px;
+
+    color: #FFFFFF;
+    background: #66BB6A 0% 0% no-repeat padding-box;
+    box-shadow: 0px 10px 15px #4CAF505C;
+    border-radius: 6px;
+    opacity: 0;
+}
+
+.messages--color {
+    color: #FFFFFF;
+}
+
+.visible {
+    opacity: 1!important;
+}
+
+.error {
+    border: 1px solid #EF7DA0;
+}
+
+.success {
+    border: 1px solid green;
+    background-color: #d6ffd6;
+}
+
+
+/*------------------user-list--------------------*/
+.user-list-container {
+    display: flex;
+    flex-direction: column;
+    row-gap: 16px;
+
+    width: 1218px;
+    height: 711px;
+    padding-left: 46px;
+}
+
+.user-list-create-button {
+    align-self: end;
+}
+
+.user-list-table tbody tr {
+    margin-bottom: 2px;
+}
+.user-list-table tbody {
+    display: block;
+    height: 655px;
+    overflow: auto;
+    background-color: #FFFFFFFF;
+}
+.user-list-table thead, tbody tr {
+    display: table;
+    width: 100%;
+    table-layout: fixed;
+}
+.user-list-table thead {
+    text-align: left;
+    font: normal normal bold 13px/16px Helvetica;
+    letter-spacing: 0px;
+    color: #A4A4B5;
+    text-transform: uppercase;
+    background-color: #FFFFFFFF;
+}
+.user-list-table table {
+    width: 1218px;
+    border-collapse: collapse;
+}
+
+.user-list-table tr {
+    height: 56px;
+}
+
+.user-list-table tr td:first-child {
+    padding-left: 26px;
+}
+
+.user-list-table thead th:first-child {
+    padding-left: 26px;
+}
+
+.user-list-table td {
+    font-size: 13px;
+    text-align: left;
+    vertical-align: middle;
+}
+
+.user-list-table tbody tr {
+    background: #F4F5F8 0% 0% no-repeat padding-box;
+    opacity: 1;
+}
+
+.user-list-table tbody tr:hover {
+    background-color: #EFF0F4;
+}
+
+/*------------------user-view--------------------*/
+.user-view-form-field__error {
+    color: #EF7DA0
+}
+.user-view-container {
+    width: 584px;
+    margin-top: 62px;
+    min-height: 711px;
+    margin-right: 46px;
+    background: #FFFFFF 0% 0% no-repeat padding-box;
+    box-shadow: 0px 0px 30px #523F690D;
+    border: 1px solid #EBEDF3;
+    border-radius: 6px;
+    opacity: 1;
+}
+
+.user-view-header {
+    height: 16px;
+    font-weight: bold!important;
+    padding: 31px 26px 29px 26px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.user-view-form {
+    display: flex;
+    flex-direction: column;
+    row-gap: 16px;
+    padding: 0 26px 26px 26px;
+}
+
+.input-with-image {
+    position: relative;
+}
+
+.input-with-image input {
+    padding-left: 40px;
+    vertical-align: middle;
+}
+
+.input-with-image::before {
+    content: "";
+    position: absolute;
+    left: 10px;
+    top: 65%;
+    transform: translateY(-50%);
+    width: 24px;
+    height: 24px;
+    background-image: url('/assets/alternate_email_black_24dp.svg');
+    background-size: cover;
+}
+
+.user-view-header__label span{
+    font-size: 16px;
+    font-weight: bold;
+}
+.user-view-form-field {
+    display: flex;
+    flex-direction: column;
+    row-gap: 3px;
+}
+
+.user-view-create {
+    display: flex;
+    justify-content: center;
+}
+
+.user-view-edit {
+    display: flex;
+    justify-content: space-between;
+}
+
+.user-view-form-field__input {
+    padding: 17px 16px;
+    background: #F3F6F9 0% 0% no-repeat padding-box;
+    border-radius: 6px;
+    border: 0;
+}

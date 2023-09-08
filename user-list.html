@@ -1,0 +1,28 @@
+<div class="user-list-container">
+    <div class="user-list-create-button">
+        <button ng-click="setUserState('create')" class="button button--primary pointer">Create</button>
+    </div>
+
+    <div class="user-list-table-container">
+        <table class="user-list-table">
+            <thead>
+            <tr>
+                <th>USER NAME</th>
+                <th>FIRST NAME</th>
+                <th>LAST NAME</th>
+                <th>EMAIL</th>
+                <th>USER TYPE</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr ng-repeat="user in userList" ng-click="setUserState('edit', user, $index)" class="pointer">
+                <td>{{ user.username }}</td>
+                <td>{{ user.first_name }}</td>
+                <td>{{ user.last_name }}</td>
+                <td>{{ user.email }}</td>
+                <td>{{ user.type }}</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
