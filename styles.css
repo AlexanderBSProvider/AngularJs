@@ -105,7 +105,8 @@ select {
 }
 
 .error {
-    border: 1px solid #EF7DA0;
+    background-color: red;
+    border: 1px solid #EF7DA0!important;
 }
 
 .success {
@@ -227,7 +228,7 @@ select {
     content: "";
     position: absolute;
     left: 10px;
-    top: 65%;
+    top: 45px;
     transform: translateY(-50%);
     width: 24px;
     height: 24px;
